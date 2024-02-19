@@ -1,11 +1,12 @@
 # take_note
 
-A new Flutter project.
 
-## Getting Started
+
 ## Images
 
-![Image 1](assets/create.jpg)
-![Image 2](aassets/dashboard.jpg)
-![Image 3](assets/list.jpg)
-![Image 4](assets/search.jpg)
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+  <img src="assets/create.jpg" alt="Image 1" style="max-width: 100%; height: auto;">
+  <img src="assets/dashboard.jpg" alt="Image 2" style="max-width: 100%; height: auto;">
+  <img src="assets/list.jpg" alt="Image 3" style="max-width: 100%; height: auto;">
+  <img src="assets/search.jpg" alt="Image 4" style="max-width: 100%; height: auto;">
+</div>
