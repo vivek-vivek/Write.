@@ -75,7 +75,7 @@ class _DashboardScreenState extends State<DashboardScreen>
             },
             child: Scaffold(
               key: _scaffoldKey,
-              backgroundColor: _appColor.white,
+              backgroundColor: _appColor.black,
               floatingActionButton: animatedFloatingActionButton(),
               body: SafeArea(
                 child: Padding(
@@ -109,6 +109,7 @@ class _DashboardScreenState extends State<DashboardScreen>
             ? const Center(
                 child: Text(
                   "No notes found",
+                  style: TextStyle(color: Colors.white),
                 ),
               )
             : BlocProvider.of<DashboardBloc>(parentContext).ScreenGridView ==
@@ -147,7 +148,8 @@ class _DashboardScreenState extends State<DashboardScreen>
                                       Text(
                                         normalDateFormate(
                                             notesList[index].updatedAt ?? ""),
-                                        style: const TextStyle(fontSize: 10),
+                                        style: const TextStyle(
+                                            fontSize: 10, color: Colors.white),
                                       ),
                                       const SizedBox(height: 6),
                                       SizedBox(
@@ -156,7 +158,9 @@ class _DashboardScreenState extends State<DashboardScreen>
                                                 0.85,
                                         child: Text(
                                           notesList[index].note ?? "",
-                                          style: const TextStyle(fontSize: 17),
+                                          style: const TextStyle(
+                                              fontSize: 17,
+                                              color: Colors.white),
                                           overflow: TextOverflow.ellipsis,
                                           maxLines: 1,
                                         ),
@@ -231,14 +235,16 @@ class _DashboardScreenState extends State<DashboardScreen>
                                             normalDateFormate(
                                                 notesList[index].updatedAt ??
                                                     ""),
-                                            style:
-                                                const TextStyle(fontSize: 10),
+                                            style: const TextStyle(
+                                                fontSize: 10,
+                                                color: Colors.white),
                                           ),
                                           const Divider(),
                                           Text(
                                             notesList[index].note ?? "",
-                                            style:
-                                                const TextStyle(fontSize: 17),
+                                            style: const TextStyle(
+                                                fontSize: 17,
+                                                color: Colors.white),
                                             overflow: TextOverflow.ellipsis,
                                             maxLines: 5,
                                           ),
@@ -295,7 +301,7 @@ class _DashboardScreenState extends State<DashboardScreen>
         const Text(
           "Notes",
           style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.w600, fontSize: 21),
+              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 21),
         ),
         IconButton(
             onPressed: () {
@@ -312,8 +318,11 @@ class _DashboardScreenState extends State<DashboardScreen>
                   );
             },
             icon: BlocProvider.of<DashboardBloc>(parentContext).ScreenGridView
-                ? const Icon(Icons.grid_view_outlined)
-                : const Icon(Icons.list))
+                ? const Icon(
+                    Icons.grid_view_outlined,
+                    color: Colors.white,
+                  )
+                : const Icon(Icons.list, color: Colors.white))
       ],
     );
   }

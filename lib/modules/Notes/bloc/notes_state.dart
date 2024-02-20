@@ -28,6 +28,14 @@ final class MoodSelectedState extends NotesState {
   List<Object> get props => [mood, timeStamp];
 }
 
+final class SubMoodSelectedState extends NotesState {
+  final String mood;
+  final int timeStamp;
+  const SubMoodSelectedState({required this.mood, required this.timeStamp});
+  @override
+  List<Object> get props => [mood, timeStamp];
+}
+
 final class CreateNoteSuccessState extends NotesState {
   final String message;
   const CreateNoteSuccessState({required this.message});

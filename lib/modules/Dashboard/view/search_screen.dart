@@ -39,6 +39,7 @@ class _SearchScreenState extends State<SearchScreen> {
         child: BlocBuilder<DashboardBloc, DashboardState>(
           builder: (context, state) {
             return Scaffold(
+              backgroundColor: Colors.white,
               appBar: AppBar(
                 leading: IconButton(
                     onPressed: () {
@@ -90,13 +91,16 @@ class _SearchScreenState extends State<SearchScreen> {
                                     return ListTile(
                                       title: SizedBox(
                                         width: 150,
-                                        child: Text(normalDateFormate(
-                                            results[index].updatedAt ?? ""), maxLines: 1,overflow: TextOverflow.ellipsis,),
+                                        child: Text(
+                                          normalDateFormate(
+                                              results[index].updatedAt ?? ""),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
                                       ),
                                       subtitle: SizedBox(
                                           width: 150,
-                                          child:
-                                              Text(results[index].note ?? "",
+                                          child: Text(results[index].note ?? "",
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis)),
                                       onTap: () {},

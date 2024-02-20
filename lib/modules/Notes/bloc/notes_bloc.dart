@@ -14,6 +14,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
     on<NotesEvent>((event, emit) {});
 
     on<SelectMoodEvent>(selectMood);
+    on<SelectSubMoodEvent>(selectSubMood);
     on<CreateNoteEvent>(createNote);
     on<UpdateNoteEvent>(updateNote);
     on<DeleteNoteEvent>(deleteNote);
@@ -22,6 +23,12 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
   Future selectMood(SelectMoodEvent event, Emitter<NotesState> emit) async {
     log(event.mood, name: "SELECTED MOOD");
     emit(MoodSelectedState(
+        mood: event.mood, timeStamp: DateTime.now().microsecondsSinceEpoch));
+  }
+
+  Future selectSubMood(
+      SelectSubMoodEvent event, Emitter<NotesState> emit) async {
+    emit(SubMoodSelectedState(
         mood: event.mood, timeStamp: DateTime.now().microsecondsSinceEpoch));
   }
 

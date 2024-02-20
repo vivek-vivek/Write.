@@ -15,12 +15,14 @@ class NoteModel {
   String? note;
   String? mood;
   String? updatedAt;
+  String? subMood;
 
   NoteModel({
     this.id,
     this.note,
     this.mood,
     this.updatedAt,
+    this.subMood,
   });
 
   factory NoteModel.fromJson(Map<String, dynamic> json) => NoteModel(
@@ -28,6 +30,7 @@ class NoteModel {
         note: json["note"],
         mood: json["mood"],
         updatedAt: json["updatedAt"],
+        subMood: json["subMood"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -35,5 +38,6 @@ class NoteModel {
         "note": note,
         "mood": mood,
         "updatedAt": updatedAt,
+        "subMood": subMood,
       };
 }

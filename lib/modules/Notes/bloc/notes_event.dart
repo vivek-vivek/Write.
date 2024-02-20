@@ -14,6 +14,13 @@ final class SelectMoodEvent extends NotesEvent {
   List<Object> get props => [mood];
 }
 
+final class SelectSubMoodEvent extends NotesEvent {
+  final String mood;
+  const SelectSubMoodEvent({required this.mood});
+  @override
+  List<Object> get props => [mood];
+}
+
 final class CreateNoteEvent extends NotesEvent {
   final String note, mood, updatedAt;
 

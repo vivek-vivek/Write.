@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:take_note/modules/Dashboard/view/dashboard_screen.dart';
+
+import 'package:take_note/modules/Notes/view/create_or_update_note_screen.dart';
 
 final messangerKey = GlobalKey<ScaffoldMessengerState>();
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -19,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const DashboardScreen(),
+      home: const CreateOrUpdateNoteScreen(),
     );
   }
 }
